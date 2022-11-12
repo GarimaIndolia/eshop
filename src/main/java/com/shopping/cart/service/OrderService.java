@@ -1,17 +1,17 @@
 package com.shopping.cart.service;
 
-import com.shopping.cart.bean.Order;
+import com.shopping.cart.bean.Orders;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public interface OrderService {
 
-    public long createOrder(Order order);
+    public long createOrder(Orders order);
 
-    public Order updateOrder(Order order);
+    public Orders updateOrder(Orders order);
 
     public List findAllOrdersByConditions(LocalDateTime dateMin, LocalDateTime dateMax);
 
-    public Order getOrderById(Long orderId);
+    public List getOrderById(Long orderId);
 }

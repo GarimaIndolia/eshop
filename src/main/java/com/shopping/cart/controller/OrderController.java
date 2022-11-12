@@ -1,11 +1,8 @@
 package com.shopping.cart.controller;
 
-import com.shopping.cart.bean.Order;
-import com.shopping.cart.bean.Product;
-import com.shopping.cart.bean.User;
+import com.shopping.cart.bean.Orders;
 import com.shopping.cart.constant.Constant;
 import com.shopping.cart.service.OrderService;
-import com.shopping.cart.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,12 +32,12 @@ public class OrderController {
     }
 
     @PostMapping(value = Constant.PLACE_ORDER,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity placeOrder(@RequestBody Order order)  {
+    public ResponseEntity placeOrder(@RequestBody Orders order)  {
         return new ResponseEntity(orderService.createOrder(order), HttpStatus.CREATED);
     }
 
     @PutMapping(value = Constant.CANCEL_ORDER,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity cancelOrder(@RequestBody Order order)  {
+    public ResponseEntity cancelOrder(@RequestBody Orders order)  {
         return new ResponseEntity(orderService.updateOrder(order).getOrderId(), HttpStatus.OK);
     }
 

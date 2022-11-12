@@ -7,10 +7,15 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Order {
+public class Orders {
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
+
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long orderId;
+
 	private LocalDateTime orderDate;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

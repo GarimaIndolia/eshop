@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 @PropertySource("classpath:config.properties")
-//@EnableJpaRepositories("com.dao")
+@EnableJpaRepositories("com.shopping.cart.repository")
 @EntityScan("com.shopping.cart.bean")
 @ComponentScan("module-service")
 public class ShoppingCartAPIMain extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingCartAPIMain.class, args);
 	}
-	  @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-	        return builder.sources(ShoppingCartAPIMain.class);
-	    }
-	  
+
 	  @RequestMapping("/")
 	  public String home() {
 	    return "Hello World";

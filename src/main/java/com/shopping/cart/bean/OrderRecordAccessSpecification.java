@@ -8,22 +8,22 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
 
-public class OrderRecordAccessSpecification implements Specification<Order>{
+public class OrderRecordAccessSpecification implements Specification<Orders>{
 
 
-	    private Order filter;
+	    private Orders filter;
 		private LocalDateTime dateMin;
 		private LocalDateTime dateMax;
 
-	    public OrderRecordAccessSpecification(Order filter, LocalDateTime dateMin, LocalDateTime dateMax) {
+	    public OrderRecordAccessSpecification(Orders filter, LocalDateTime dateMin, LocalDateTime dateMax) {
 	        super();
 	        this.filter = filter;
 			this.dateMin=dateMin;
 			this.dateMax=dateMax;
 	    }
 
-	    public Predicate toPredicate(Root<Order> root, CriteriaQuery<?> cq,
-	            CriteriaBuilder cb) {
+	    public Predicate toPredicate(Root<Orders> root, CriteriaQuery<?> cq,
+                                     CriteriaBuilder cb) {
 
 	        Predicate p = cb.disjunction();
 

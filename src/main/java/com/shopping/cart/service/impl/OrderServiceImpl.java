@@ -1,6 +1,6 @@
 package com.shopping.cart.service.impl;
 
-import com.shopping.cart.bean.Order;
+import com.shopping.cart.bean.Orders;
 import com.shopping.cart.bean.OrderRecordAccessSpecification;
 import com.shopping.cart.repository.OrderRecordAccessRepository;
 import com.shopping.cart.service.OrderService;
@@ -16,23 +16,23 @@ public class OrderServiceImpl implements OrderService {
     private OrderRecordAccessRepository orderRepository;
 
     @Override
-    public long createOrder(Order order) {
+    public long createOrder(Orders order) {
         return orderRepository.save(order).getOrderId();
     }
 
     @Override
-    public Order updateOrder(Order order) {
+    public Orders updateOrder(Orders order) {
         return orderRepository.save(order);
     }
 
     @Override
     public List findAllOrdersByConditions(LocalDateTime dateMin, LocalDateTime dateMax) {
-        Specification<Order> spec = new OrderRecordAccessSpecification(new Order(), dateMin, dateMax);
+        Specification<Orders> spec = new OrderRecordAccessSpecification(new Orders(), dateMin, dateMax);
         return orderRepository.findAll(spec);
     }
 
     @Override
-    public Order getOrderById(Long orderId) {
-        return orderRepository.findById(orderId).get();
+    public List getOrderById(Long orderId) {
+        return orderRepository.findByOrderId(orderId);
     }
 }
