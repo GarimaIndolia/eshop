@@ -24,7 +24,7 @@ public class Orders {
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId", nullable = false)
-	private Product userId;
+	private Users userId;
 	
 	private String orderStatus;
 

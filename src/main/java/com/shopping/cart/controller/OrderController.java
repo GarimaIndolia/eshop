@@ -5,6 +5,7 @@ import com.shopping.cart.constant.Constant;
 import com.shopping.cart.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.time.LocalDateTime;
 public class OrderController {
 
     @Autowired
+    @Qualifier("orderService")
     private OrderService orderService;
 
     @GetMapping(value = Constant.GET_ORDER_HISTORY,produces = MediaType.APPLICATION_JSON_VALUE)

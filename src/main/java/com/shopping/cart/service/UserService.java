@@ -1,11 +1,14 @@
 package com.shopping.cart.service;
 
-import com.shopping.cart.bean.User;
+import com.shopping.cart.bean.Users;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 
 public interface UserService {
 
- User saveUser(User user);
+ Users saveUser(Users users);
 
- User updateUser(User user);
+ Users updateUser(Users users);
 
 }

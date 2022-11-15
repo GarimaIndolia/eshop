@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 @PropertySource("classpath:config.properties")
-@EnableJpaRepositories("com.shopping.cart.repository")
-@EntityScan("com.shopping.cart.bean")
-@ComponentScan("module-service")
+/*@EnableJpaRepositories("com.shopping.cart.repository")
+@EntityScan("com.shopping.cart.bean")*/
+
 public class ShoppingCartAPIMain extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingCartAPIMain.class, args);

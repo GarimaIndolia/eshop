@@ -1,12 +1,11 @@
 package com.shopping.cart.controller;
 
 import com.shopping.cart.bean.Product;
-import com.shopping.cart.bean.User;
 import com.shopping.cart.constant.Constant;
 import com.shopping.cart.service.ProductService;
-import com.shopping.cart.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ProductController {
 
     @Autowired
+    @Qualifier("productService")
     private ProductService productService;
 
     @GetMapping(value = Constant.GET_PRODUCT,produces = MediaType.APPLICATION_JSON_VALUE)

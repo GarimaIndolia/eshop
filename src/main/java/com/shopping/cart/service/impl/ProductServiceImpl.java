@@ -4,7 +4,9 @@ import com.shopping.cart.bean.Product;
 import com.shopping.cart.repository.ProductRepository;
 import com.shopping.cart.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("productService")
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
