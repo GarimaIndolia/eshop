@@ -17,5 +17,6 @@ public interface OrderService {
 
     public List findAllOrdersByConditions(LocalDateTime dateMin, LocalDateTime dateMax);
 
-    public List getOrderById(Long orderId);
+    public Orders getOrdersById(Long id);
+
 }

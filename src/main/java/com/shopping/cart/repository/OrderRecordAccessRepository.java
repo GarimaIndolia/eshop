@@ -12,5 +12,4 @@ public interface OrderRecordAccessRepository extends JpaRepository<Orders,Long >
 
 	List<Orders> findByOrderDate(Orders o);
 
-	List<Orders> findByOrderId(Long orderId);
 }

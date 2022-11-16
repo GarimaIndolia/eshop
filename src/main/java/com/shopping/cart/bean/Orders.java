@@ -13,17 +13,15 @@ public class Orders {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long orderId;
 
 	private LocalDateTime orderDate;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "productId", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
+	@JoinColumn(name = "productId")
 	private Product productId;
 
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "userId", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY,targetEntity = Users.class)
+	@JoinColumn(name = "userId")
 	private Users userId;
 	
 	private String orderStatus;
